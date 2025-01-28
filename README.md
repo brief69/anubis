@@ -26,6 +26,47 @@ npm run build
 npm run clean
 ```
 
+### バックエンド
+
+1. 依存関係のインストール
+```bash
+cd backend
+poetry install
+```
+
+2. 開発サーバーの起動
+```bash
+poetry run uvicorn src.api.main:app --reload
+```
+
+3. テストの実行
+```bash
+poetry run pytest
+```
+
+## テスト
+
+### バックエンドテスト
+
+以下のテストが実装されています：
+
+1. **ファイル操作API**
+   - ファイル一覧の取得
+   - ファイルの読み書き
+   - ディレクトリの作成・削除
+   - エラーケースの処理
+
+2. **GPTサービス**
+   - タスクの開始と実行
+   - 生成プロセスの管理
+   - タスクの停止機能
+   - ステータス管理
+
+3. **ワークスペース管理**
+   - 情報取得
+   - 設定の更新
+   - 初期化処理
+
 ## プロジェクト構造
 
 ```
@@ -43,9 +84,33 @@ anubis/
 ├── backend/                  # バックエンド（GPT Engineer）
 │   ├── src/
 │   │   └── api/            # RESTful API実装
+│   │       ├── models/     # データモデル
+│   │       ├── routers/    # APIルーター
+│   │       └── services/   # ビジネスロジック
+│   ├── tests/              # テストコード
+│   │   └── api/           # APIテスト
 │   ├── gpt_engineer/       # GPT Engineerのコア
 │   └── pyproject.toml      # バックエンドの依存関係
 └── README.md
+
+## API エンドポイント
+
+### ファイル操作
+- `GET /api/files/list/{path}` - ファイル一覧の取得
+- `GET /api/files/read/{path}` - ファイルの読み取り
+- `POST /api/files/write/{path}` - ファイルの書き込み
+- `POST /api/files/create/directory/{path}` - ディレクトリの作成
+- `DELETE /api/files/delete/{path}` - ファイル/ディレクトリの削除
+
+### GPT Engineer
+- `POST /api/gpt/generate` - コード生成の開始
+- `GET /api/gpt/status/{task_id}` - 生成タスクのステータス確認
+- `POST /api/gpt/stop/{task_id}` - 生成タスクの停止
+
+### ワークスペース
+- `GET /api/workspace/info` - ワークスペース情報の取得
+- `POST /api/workspace/config` - 設定の更新
+- `POST /api/workspace/init` - ワークスペースの初期化
 
 ## 技術スタック
 
