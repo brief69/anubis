@@ -1,0 +1,82 @@
+.file-explorer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--vscode-sideBar-background);
+    color: var(--vscode-sideBar-foreground);
+}
+
+.file-explorer-header {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--vscode-sideBar-border);
+}
+
+.back-button {
+    padding: 4px 8px;
+    background: none;
+    border: 1px solid var(--vscode-button-border);
+    color: var(--vscode-button-foreground);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.back-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.current-path {
+    font-size: 0.9em;
+    color: var(--vscode-sideBar-foreground);
+    opacity: 0.8;
+}
+
+.file-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+    gap: 8px;
+}
+
+.file-item:hover {
+    background-color: var(--vscode-list-hoverBackground);
+}
+
+.file-icon {
+    font-size: 1.2em;
+}
+
+.file-name {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.directory {
+    font-weight: 500;
+}
+
+.file-explorer-loading {
+    padding: 16px;
+    text-align: center;
+    color: var(--vscode-foreground);
+}
+
+.file-explorer-error {
+    padding: 16px;
+    text-align: center;
+    color: var(--vscode-errorForeground);
+}
