@@ -1,0 +1,23 @@
+{
+  "name": "anubis-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "watch": "gulp watch",
+    "compile": "gulp compile",
+    "build": "gulp build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "monaco-editor": "latest",
+    "@vscode/webview-ui-toolkit": "^1.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "gulp": "^4.0.2",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^5.0.0"
+  }
+}

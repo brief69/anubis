@@ -1,0 +1,26 @@
+[project]
+name = "anubis-backend"
+version = "0.1.0"
+description = "Anubis IDE backend service"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+    "python-dotenv>=1.0.0",
+    "gpt-engineer>=0.2.0"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "anubis-backend"
+version = "0.1.0"
+description = "Anubis IDE backend service"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.100.0"
+uvicorn = "^0.22.0"
+python-dotenv = "^1.0.0"
+gpt-engineer = "^0.2.0" 
