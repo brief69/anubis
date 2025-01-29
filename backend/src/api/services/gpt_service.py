@@ -1,7 +1,7 @@
 import uuid
 from typing import Dict, Optional
 from ..models.gpt import GenerationStatus
-from gpt_engineer.core import run_gpt_engineer
+# from gpt_engineer.core import run_gpt_engineer
 import asyncio
 import logging
 

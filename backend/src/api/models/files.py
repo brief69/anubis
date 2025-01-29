@@ -8,7 +8,7 @@ class FileInfo(BaseModel):
     path: str
     is_dir: bool
     size: Optional[int] = None
-    modified: float
+    modified: int
 
     class Config:
         from_attributes = True
